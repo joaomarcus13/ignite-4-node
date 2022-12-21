@@ -1,0 +1,35 @@
+GET http://localhost:3000/notifications HTTP/1.1
+
+
+### 
+#create notification
+POST http://localhost:3000/notifications HTTP/1.1
+content-type: application/json
+
+{
+    "recipientId":"b2627431-43b6-42ca-ac6e-b2f33deda933",
+    "content":"content teste",
+    "category":"category teste"
+}
+
+###
+#cancel notification
+PATCH http://localhost:3000/notifications/078f4b60-11a3-4d13-aefd-1f839f19a9ba/cancel HTTP/1.1
+
+###
+#read notification
+PATCH http://localhost:3000/notifications/078f4b60-11a3-4d13-aefd-1f839f19a9ba/read HTTP/1.1
+
+
+###
+#unread notification
+PATCH http://localhost:3000/notifications/078f4b60-11a3-4d13-aefd-1f839f19a9ba/unread HTTP/1.1
+
+###
+#count notification
+GET http://localhost:3000/notifications/count/from/b2627431-43b6-42ca-ac6e-b2f33deda933 HTTP/1.1
+
+
+###
+#get notification
+GET http://localhost:3000/notifications/from/b2627431-43b6-42ca-ac6e-b2f33deda933 HTTP/1.1
